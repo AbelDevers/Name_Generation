@@ -10,7 +10,9 @@ Name_Generation
 
 This small project has been developped with a friend working towards a PhD in linguistic. 
 
-We were both curious to see if recurrents neural network could efficiently understand the logics of sounds and writing underlying different languages. 
+We were both curious to see if recurrents neural network could efficiently learn the logics of sounds and writing underlying different languages. 
+
+Please contact me if you are interrested by the disccsuion following it, I could send you a link to the wip paper resulting.  
 
 To do so, I have developped this small python code using tensorflow to generate random names of cities sounding french, german, english, japaneze, etc... 
 
