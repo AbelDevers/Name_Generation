@@ -1,9 +1,13 @@
-# Name_Generation
+Name_Generation
+
 -------------------------------- Table of content     --------------------------------------
+
 1. Project presentaiton
 2. How to use the code
 3. Non-exhaustive list of countries used
+
 -------------------------------- Project Presentation --------------------------------------
+
 This small project has been developped with a friend working towards a PhD in linguistic. 
 
 We were both curious to see if recurrents neural network could efficiently understand the logics of sounds and writing underlying different languages. 
@@ -11,8 +15,11 @@ We were both curious to see if recurrents neural network could efficiently under
 To do so, I have developped this small python code using tensorflow to generate random names of cities sounding french, german, english, japaneze, etc... 
 
 Using a large free-database found online, with tens of thousands of names per country, we first vectorized the input. For each symbole, we assigned a vector with 0 in all spaces and 1 in the only relevent one. For example, a "a" is [1 0 0 ... 0] and b is [0 1 0 0 ... 0]. 
+
 [0 .... 25 26 27 28 29] size 30
+
 [a .... z  -  '  space nothing]
+
 For each letter in any name we concatenate 20 of these vectors for the twenty previous letters (in the forward model) and twenty of the following letters in the backward models. So a word with four letters, will be four data points (one per letter) and each data point will be 20 concataneted 30 size vectors (600 size).
 
 We then trained two models using a very standard recurrent ltsm neural network. On predicitng the next letter based on the previous (forward model) and one predicitong the previous letters based on the next (backward).
@@ -21,7 +28,10 @@ To generate new names, we have (quite long) procedure. First we generate random 
 
 Finaly, we keep only the top 20% (highest likelhood) of the generated name for a particular length of name. We start over with the same or a new lenght. 
 
+
 -------------------------------- How to use the code ------------------------------------------
+
+
 To generate some new name you have to do the following steps 
 0. pip or conda
 1. Vectorize backward data
@@ -43,7 +53,9 @@ Usint the rrn_train.py in the same direcotry as the newly obtained pickles file 
 4 Call the pseudo random generation routine
 Again, update the cc_flips value in the create_name_rnn.py file and launch the code. A new Output.txt file will be generated with the new randomized name. 
 
+
 ---------------------------------------- List of countries, cc_flips, example ----------------------
+
 
 
 list of country indeces used (cc_flips value) 
