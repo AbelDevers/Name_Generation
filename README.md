@@ -14,6 +14,8 @@ We were both curious to see if recurrents neural network could efficiently under
 
 To do so, I have developped this small python code using tensorflow to generate random names of cities sounding french, german, english, japaneze, etc... 
 
+The file output example, contain obviously some example of the obtained results.
+
 Using a large free-database found online, with tens of thousands of names per country, we first vectorized the input. For each symbole, we assigned a vector with 0 in all spaces and 1 in the only relevent one. For example, a "a" is [1 0 0 ... 0] and b is [0 1 0 0 ... 0]. 
 
 [0 .... 25 26 27 28 29] size 30
